@@ -1,0 +1,63 @@
+package Veiculo;
+
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+public class Lista {
+
+  public static void main(String[] args) {
+    Scanner ler = new Scanner(System.in);
+
+    ArrayList<String> agenda = new ArrayList();
+
+    agenda.add("Veiculo 1");
+    agenda.add("Veiculo 2");
+    agenda.add("Veiculo 3");
+    agenda.add("Veiculo 4");
+
+    int i;
+
+    System.out.printf("Percorrendo banco de dados \n");
+    int n = agenda.size();
+    for (i=0; i<n; i++) {
+      System.out.printf("Posição %d- %s\n", i, agenda.get(i));
+    }
+
+    System.out.printf("\nInforme o veiculo que deseja excluir:\n");
+    i = ler.nextInt();
+
+    try {
+
+      agenda.remove(i);
+    } catch (IndexOutOfBoundsException e) {
+
+        System.out.printf("\nErro: posição inválida (%s).",
+          e.getMessage());
+    }
+
+    System.out.printf("\nPercorrendo banco de dados \n");
+    i = 0;
+    for (String contato: agenda) {
+      System.out.printf("Posição %d- %s\n", i, contato);
+      i++;
+    }
+
+      List<String> testList = new ArrayList<>();
+        testList.add("1");
+        testList.add("2");
+        testList.add("3");
+        testList.add("4");
+
+        System.out.println("Lista inicial:\n"
+                           + testList); 
+
+        testList.add("5");
+        testList.add("6");
+
+        System.out.println("Adicionando automoveis:\n"
+                           + testList);
+    }
+  }
+
+
+
