@@ -1,0 +1,60 @@
+package veiculo;
+
+import java.util.Scanner;
+
+public class Veiculo {
+
+    public static void main(String[] args) {
+      
+//modelo, marca, anoDeFabricacao, valorDeMercado, placa, combustivel
+    
+    
+    System.out.println("Digite o modelo de seu carro:");
+    Scanner in = new Scanner(System.in);
+    String modelo;
+    modelo = (in.nextLine());
+
+    
+    System.out.println("Digite a marca:");
+    String marca;
+    marca = (in.nextLine());
+    
+    
+    System.out.println("Digite o ano de fabricação:");
+    String ano;
+    ano = (in.nextLine());
+    
+    System.out.println("Digite o valor de mercado:");
+    String valor;
+    valor = (in.nextLine());
+    
+    System.out.println("Digite a placa:");
+    String placa;
+    placa = (in.nextLine());
+    
+    System.out.println("Digite o tipo de combustível:");
+    String combustivel;
+    combustivel = (in.nextLine());
+       
+        try (Scanner teclado = new Scanner(System.in)) {
+            double custoDeFabrica, imposto, valorDistribuidor, valorDeVenda;
+            System.out.println("Digite o custo de fábrica do seu carro e sera feito os impostos e o valor de venda:");
+            custoDeFabrica = teclado.nextDouble();
+            valorDistribuidor = custoDeFabrica * 0.15;
+            imposto = custoDeFabrica * 0.30;
+            valorDeVenda = custoDeFabrica + valorDistribuidor + imposto;
+           
+            System.out.println("Valor final de venda: " + valorDeVenda);
+            System.out.println("Impostos: " + imposto);
+            
+            System.out.println("Seu modelo é:" + modelo +"\n"); 
+            System.out.println("Sua marca é:" + marca + "\n");
+            System.out.println("Seu ano de fabricação é:" + ano + "\n");
+            System.out.println("O valor de mercado é:" + valor + "\n");
+            System.out.println("Sua placa é:" + placa + "\n");
+            System.out.println("Seu combustível é:" + combustivel + "\n");
+        }
+    }
+
+    }
+    
